@@ -1,10 +1,9 @@
-name: push 3
+name: PR 1
 
 on: 
-  push:
-    branches:
-      - '*'
-      - '!staging'
+  pull_request:
+    types:
+    - opened
 
 jobs:
   print-event:

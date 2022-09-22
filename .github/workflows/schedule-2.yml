@@ -1,10 +1,9 @@
-name: push 3
+name: SCHEDULE 2
 
 on: 
   push:
-    branches:
-      - '*'
-      - '!staging'
+  schedule:
+    - cron: '30 0-21/3 * * *'
 
 jobs:
   print-event:

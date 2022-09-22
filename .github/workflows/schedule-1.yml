@@ -1,10 +1,8 @@
-name: push 3
+name: SCHEDULE 1
 
 on: 
-  push:
-    branches:
-      - '*'
-      - '!staging'
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   print-event:
