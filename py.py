@@ -1,14 +1,16 @@
-# On vous fournit un fichier notes.json représentant les notes des élèves dans les 3 matières maths, physique et histoire.
+# Créez un décorateur:
 
-# Le format json est le suivant :
+# qui se nommera censorship
+# pour une fonction qui ne prend pas de paramètres, et qui retourne une str
+# qui remplacera les mots "libre" et "dictature" (insensibles à la casse) par des séries de "_" de même taille.
+# Exemple d'utilisation : 
 
-# { students: [ { name:"XXX",noteMaths:1,notePhysique:4,noteHistoire:2}, ...{ name:"ZZZ",noteMaths:1,notePhysique:4,noteHistoire:2}]}
-# Après avoir chargé le fichier, affichez chaque élève (un par ligne) avec sa moyenne, au format "nom : moyenne". La moyenne sera arrondie a une décimale.
+# @censorship
+# def annonce():
+#     return "Un pays LIBRE de toute dictature"
+# print(annonce()) #affiche "Un pays ____ de toute _________"
 
-# Exemple, si le fichier contient :
-# {students:[{name:"Ben", noteMaths:10, notePhysique:15, noteHistoire:20},
-# {name:"Sophie", noteMaths:12,notePhysique:4, noteHistoire:18}]}
-
-# L'affichage sera :
-# Ben : 15.0
-# Sophie : 11.3
+def censorship(func):
+    def wrapper():
+        return func().replace("libre", "____").replace("dictature", "_________")
+    return wrapper
